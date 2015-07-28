@@ -37,3 +37,6 @@ puts dates[4]
 puts 6.35*6.35
 puts 6.35**2
 puts 8.888**2
+
+
+
