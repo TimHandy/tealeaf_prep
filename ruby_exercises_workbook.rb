@@ -193,3 +193,49 @@ puts flintstones
 
 # http://www.gotealeaf.com/books/ruby_workbook/read/easy_quiz_3
 
+
+puts "2. ##############"
+
+flintstones = %w(Fred Barney Wilma Betty BamBam Pebbles)
+
+flintstones << "Dino"
+
+p flintstones
+
+
+puts "3. ##############"
+
+flintstones = %w(Fred Barney Wilma Betty BamBam Pebbles)
+
+flintstones.push("Dino").push("Hoppy") # push returns the array so we can chain
+
+flintstones.concat(%w(johnny david))
+
+p flintstones
+
+
+puts "4. ##############"
+
+advice = "Few things in life are as important as house training your pet dinosaur."
+
+advice.slice!(0, advice.index('house'))  # i don't get this?
+puts advice
+
+
+
+
+puts "5. ##############"
+
+statement = "The Flintstones Rock!"
+# count the letter 't' in statement. Doesn't count 'T' though
+puts statement.scan('t').count
+
+
+puts "5. ##############"
+
+title = "Flintstone Family Members"
+
+puts title.center(40)
+
+
+# http://www.gotealeaf.com/books/ruby_workbook/read/intermediate_quiz_1
