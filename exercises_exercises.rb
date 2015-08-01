@@ -75,8 +75,72 @@ puts "-----------------"
 
 # same as above but programatically iteratively adding the values
 
+contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]
+contacts = {"Joe Smith" => {}}
+fields = [:email, :address, :phone]
+
+contacts.each do |name, hash|
+  fields.each do |field|
+    hash[field] = contact_data.shift
+  end
+end
+puts contacts["Joe Smith"]
+
+
+# as above but can work with multiple entries in the 'contacts' hash
 contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]
-
 contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
+fields = [:email, :address, :phone]
+
+contacts.each_with_index do |(name, hash), idx|
+  fields.each do |field|
+    hash[field] = contact_data[idx].shift
+  end
+end
+puts contacts
+
+
+
+
+
+arr = ['snow', 'winter', 'ice', 'slippery', 'salted roads', 'white trees']
+
+arr.delete_if do |item|
+item.start_with?("s")  # remove all entries in array starting with 's'
+end
+
+puts arr 
+
+
+arr = ['snow', 'winter', 'ice', 'slippery', 'salted roads', 'white trees']
+arr.delete_if do |item|
+  item.start_with?("s") || item.start_with?("w") # delete if item starts with 's' or 'w'
+end
+
+puts arr
+
+
+
+arr = ['snow', 'winter', 'ice', 'slippery', 'salted roads', 'white trees']
+arr.delete_if do |item|
+  item.start_with?("s", "w") # delete if item starts with 's' or 'w', just shorter than above example
+end
+
+puts arr
+
+
+
+
+
+
+puts "16. ##################################"
+a = ['white snow', 'winter wonderland', 'melting ice',
+     'slippery sidewalk', 'salted roads', 'white trees']
+a = a.map {|pairs| pairs.split}  # splits each string into an aray of arrays holding each word
+p a
+puts "------------"
+a = a.flatten  # flattens the array of arrays into a single array. net effect is to put each word into it's own array entry
+p a
+
 
