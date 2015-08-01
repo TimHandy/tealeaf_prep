@@ -239,3 +239,46 @@ puts title.center(40)
 
 
 # http://www.gotealeaf.com/books/ruby_workbook/read/intermediate_quiz_1
+
+
+puts "1. ##############"
+
+10.times {|number| puts (" " * number) + "The Flintstones Rock!"}
+
+
+puts "2. ##############"
+
+# This is very scary stuff. I'm not good enough to write this.
+result = {}
+statement = "The Flintstones Rock"
+letters = ('A'..'Z').to_a + ('a'..'z').to_a
+letters.each do |letter|
+  letter_frequency = statement.scan(letter).count
+  result[letter] = letter_frequency if letter_frequency > 0
+end
+
+
+
+puts "8. ##############"
+
+def titleize!(words)
+  words.split.map { |word| word.downcase.capitalize  }.join(' ')
+end
+puts titleize!("this is An effin string")
+
+
+puts "9. ##############"
+
+munsters = { 
+  "Herman" => { "age" => 32, "gender" => "male" }, 
+  "Lily" => { "age" => 30, "gender" => "female" }, 
+  "Grandpa" => { "age" => 402, "gender" => "male" }, 
+  "Eddie" => { "age" => 10, "gender" => "male" },
+  "Marilyn" => { "age" => 23, "gender" => "female"}
+}
+
+# add addtional age_group key depending on kid, adult, senior. k
+# kid is age 0-17
+# adult is 18-64
+# senior i 65+
+
