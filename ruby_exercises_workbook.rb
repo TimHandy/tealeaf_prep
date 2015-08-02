@@ -282,3 +282,90 @@ munsters = {
 # adult is 18-64
 # senior i 65+
 
+munsters.each do |name, details| 
+  case details["age"]
+  when 0...18
+    details["age_group"] = "kid"
+  when 18...65
+    details["age_group"] = "adult"
+  else
+    details["age_group"] = "senior"
+  end
+end
+
+p munsters
+
+
+
+
+
+
+
+# http://www.gotealeaf.com/books/ruby_workbook/read/intermediate_quiz_2
+
+
+puts "1. ##############"
+
+munsters = { 
+  "Herman" => { "age" => 32, "gender" => "male" }, 
+  "Lily" => { "age" => 30, "gender" => "female" }, 
+  "Grandpa" => { "age" => 402, "gender" => "male" }, 
+  "Eddie" => { "age" => 10, "gender" => "male" } 
+}
+
+total_male_age = 0
+munsters.each do |name, details|
+  total_male_age += details["age"] if details["gender"] == "male"
+end
+
+puts "total male age is #{total_male_age}"
+
+
+
+puts "2. ##############"
+#Given this previously seen family hash, print out the name, age and gender of each family member:
+
+munsters = { 
+  "Herman" => { "age" => 32, "gender" => "male" }, 
+  "Lily" => { "age" => 30, "gender" => "female" }, 
+  "Grandpa" => { "age" => 402, "gender" => "male" }, 
+  "Eddie" => { "age" => 10, "gender" => "male" },
+  "Marilyn" => { "age" => 23, "gender" => "female"}
+}
+
+munsters.each do |name, details|
+  puts "#{name} is #{details["age"]} year old #{details["gender"]}"
+end
+
+
+puts "4. ##############"
+
+sentence = "Humpty Dumpty sat on a wall."
+
+p sentence.split
+p sentence.split.reverse
+p sentence.split.reverse.join
+
+p words = sentence.split(/\W/).reverse.join(' ') + '.'
+
+
+
+puts "5. ##############"
+
+answer = 42
+
+def mess_with_it(some_number)
+  some_number += 8
+end
+
+new_answer = mess_with_it(answer)
+
+p answer - 8
+
+# answer = 34
+
+
+
+# http://www.gotealeaf.com/books/ruby_workbook/read/intermediate_quiz_3
+
+puts "1. ##############"
